@@ -2,6 +2,7 @@ import {
   ContentfulClientApi,
   createClient,
   EntrySkeletonType,
+  TagCollection,
 } from "contentful";
 
 import type { Blog } from "@/interfaces/BlogPostProps";
@@ -41,15 +42,8 @@ class Contentful {
   }
 
   async getCategories() {
-    const res = await this.instance.getEntries<
-      EntrySkeletonType<CategoryProps, "category">
-    >({
-      skip: 0,
-      limit: 20,
-      content_type: "category",
-    });
-
-    return res.items || [];
+    const res = await this.instance.getTags({});
+    return res.items.map((tag) => tag.name);
   }
 }
 

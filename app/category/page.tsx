@@ -2,10 +2,10 @@ import contentful from "@/lib/contentful";
 import Link from "next/link";
 import SharedLinkBanner from "@/components/shared/SharedLinkBanner";
 import Luminance from "@/lib/luminance";
-import DotPattern from "@/components/shared/dot-pattern";
 import { cn } from "@/lib/cn";
 import React from "react";
 import GridBackground from "@/components/shared/GridBackground";
+import { randomColorGenerate } from "@/lib/randomColorGenerate";
 
 export default async function CategoriesHome() {
   const categories = await contentful.getCategories();
@@ -28,23 +28,26 @@ export default async function CategoriesHome() {
           {/*Buradaki kategorilere göre kötülemeleri görüntüleyebilir, daha spesifik bir şekilde can sıkailirsiniz*/}
         </h2>
         <div className="flex flex-wrap justify-center items-center gap-y-1 w-2/3">
-          {categories.map((cat, index) => (
-            <Link
-              href={`/category/${cat.fields.name}`}
-              key={cat.sys.id}
-              className="px-4 py-3 rounded-xl transition-all categoryCard flex justify-center items-center gap-1 font-bold"
-              style={{
-                backgroundColor: cat.fields.color,
-                color: Luminance.decide(cat.fields.color),
-                transform: `rotate(${Math.random() * 30 - 20}deg)`,
-                transition: "all 100ms ease-in-out",
-                zIndex: 2,
-              }}
-            >
-              <span className="text-xl">#</span>
-              {cat.fields.name}
-            </Link>
-          ))}
+          {categories.map((cat, index) => {
+            const randomColor = randomColorGenerate();
+            return (
+              <Link
+                href={`/category/${cat}`}
+                key={index}
+                className="px-4 py-3 rounded-xl transition-all categoryCard flex justify-center items-center gap-1 font-bold"
+                style={{
+                  backgroundColor: randomColor,
+                  color: Luminance.decide(randomColor),
+                  transform: `rotate(${Math.random() * 30 - 20}deg)`,
+                  transition: "all 100ms ease-in-out",
+                  zIndex: 2,
+                }}
+              >
+                <span className="text-xl">#</span>
+                {cat}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
