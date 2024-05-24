@@ -24,7 +24,6 @@ export default async function Home() {
         <article className="w-full pt-24 px-40 flex flex-wrap justify-start gap-10">
           {posts.map((i) => {
             const fields = i.fields as unknown as Post;
-            console.log(i);
             return (
               <SummaryCard
                 title={fields.title as string}
