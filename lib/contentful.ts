@@ -6,6 +6,8 @@ import {
 import { Post } from "@/contentfulTypes";
 import { redirect } from "next/navigation";
 import { ContentfulErrorData } from "contentful-sdk-core/dist/types/types";
+import { ContentfulBlogInterface } from "@/interfaces/ContentfulBlogInterface";
+import { Blog } from "@/interfaces/BlogPostProps";
 
 class Contentful {
   instance: ContentfulClientApi<undefined>;
@@ -20,17 +22,20 @@ class Contentful {
   }
 
   async getPosts(skip: number) {
-    const res = await this.instance.getEntries({
-      skip,
-      limit: 200,
-      content_type: "post",
-    });
+    const res = await this.instance.getEntries<EntrySkeletonType<Blog, "post">>(
+      {
+        skip,
+        limit: 20,
+        content_type: "post",
+      },
+    );
     return res.items || [];
   }
 
   async getPostById(postId: string) {
     try {
-      const res = await this.instance.getEntry(postId);
+      const res =
+        await this.instance.getEntry<EntrySkeletonType<Blog, "post">>(postId);
       return res;
     } catch (err) {
       return null;

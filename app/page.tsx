@@ -3,8 +3,8 @@ import SummaryCard from "@/components/home/SummaryCard";
 import React from "react";
 import Link from "next/link";
 import Contentful from "@/lib/contentful";
-import { Post } from "@/contentfulTypes";
 import dayjs from "dayjs";
+import { Asset } from "contentful";
 
 export default async function Home() {
   const posts = await Contentful.getPosts(0);
@@ -22,18 +22,16 @@ export default async function Home() {
           </h1>
         </div>
         <article className="w-full pt-24 px-40 flex flex-wrap justify-start gap-10">
-          {posts.map((i) => {
-            const fields = i.fields as unknown as Post;
+          {posts.map((post) => {
             return (
               <SummaryCard
-                title={fields.title as string}
-                imageSrc={`https://${(
-                  fields.postimage.fields.file?.url as string
-                ).replace("//", "")}`}
-                key={i.sys.id as string}
-                summary={fields.midliner as string}
-                postUrl={`/post/${i.sys.id}`}
-                date={i.sys.updatedAt}
+                title={post.fields.title}
+                imageSrc={`https://${((post.fields.postimage as Asset).fields
+                  ?.file?.url as string)!.replace("//", "")}`}
+                key={post.sys.id}
+                summary={post.fields.midliner}
+                postUrl={`/post/${post.sys.id}`}
+                date={post.sys.updatedAt}
               />
             );
           })}

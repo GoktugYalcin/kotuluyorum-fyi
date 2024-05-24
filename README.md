@@ -21,6 +21,8 @@ pnpm install && pnpm run dev
 ```
 
 ### Gonna develop
+- **Top critized of month side** 
+- **Categories side**
 - Vercel pipeline for production.
 - Logging side to Firebase.
 - Better **Headless CMS**(Because Contentful made me sick about interfacing post types. Their docs are too outdated.)

@@ -18,20 +18,18 @@ export default async function PostPage({
     redirect("/404");
   }
 
-  const parsedContentToMarkdown = documentToHtmlString(
-    // @ts-ignore
-    post.fields.content as unknown as Document,
-    {
-      renderMark: {
-        [MARKS.BOLD]: (text) => `<b>${text}</b>`,
-        [MARKS.ITALIC]: (text) => `<i>${text}</i>`,
-      },
-      renderNode: {
-        [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`,
-      },
-      preserveWhitespace: true,
+  const parsedContentToMarkdown = documentToHtmlString(post.fields.content, {
+    renderMark: {
+      [MARKS.BOLD]: (text) => `<b>${text}</b>`,
+      [MARKS.ITALIC]: (text) => `<i>${text}</i>`,
     },
-  ).replaceAll("&#39;", "'");
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
+        `<img src="https:${node.data.target.fields.file.url}" />`,
+      [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`,
+    },
+    preserveWhitespace: true,
+  }).replaceAll("&#39;", "'");
 
   return (
     <>
@@ -40,10 +38,10 @@ export default async function PostPage({
         customClasses="w-full min-h-screen flex-col justify-center items-center px-[500px] py-32"
         transition={200}
       >
-        <PostTitle title={post.fields.title as string} />
+        <PostTitle title={post.fields.title} />
         <PostImprint
-          date={post.sys.updatedAt as string}
-          midliner={post.fields.midliner as string}
+          date={post.sys.updatedAt}
+          midliner={post.fields.midliner}
         />
         <div
           className="mt-6 flex flex-col gap-2 justify-start items-start text-md"
