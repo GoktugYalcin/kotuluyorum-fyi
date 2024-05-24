@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
 
 const AnimatedHeader: React.FC<{}> = () => {
   return (
@@ -10,10 +10,10 @@ const AnimatedHeader: React.FC<{}> = () => {
       animate={{ opacity: 1, y: 0 }}
       className="font-bold text-3xl"
     >
-      Buradaki kategorilere göre kötülemeleri görüntüleyebilir, daha spesifik
-      bir şekilde can sıkabilirsiniz.
+      Buradaki etiketlere göre kötülemeleri görüntüleyebilir, daha spesifik bir
+      şekilde can sıkabilirsiniz.
     </motion.h2>
-  );
-};
+  )
+}
 
-export default AnimatedHeader;
+export default AnimatedHeader
