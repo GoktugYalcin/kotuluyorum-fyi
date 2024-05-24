@@ -1,3 +1,5 @@
+![banner](https://github.com/GoktugYalcin/kotuluyorum-fyi/blob/2c667e3b8b290e9aa318cbe3a1dec634637a17c1/assets/screenshots/img.png)
+
 # Kötülüyorum.fyi
 ### A blog that critiquing products that I bought or experienced
 
