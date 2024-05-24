@@ -3,11 +3,9 @@ import {
   createClient,
   EntrySkeletonType,
 } from "contentful";
-import { Post } from "@/contentfulTypes";
-import { redirect } from "next/navigation";
-import { ContentfulErrorData } from "contentful-sdk-core/dist/types/types";
-import { ContentfulBlogInterface } from "@/interfaces/ContentfulBlogInterface";
-import { Blog } from "@/interfaces/BlogPostProps";
+
+import type { Blog } from "@/interfaces/BlogPostProps";
+import { CategoryProps } from "@/interfaces/CategoryProps";
 
 class Contentful {
   instance: ContentfulClientApi<undefined>;
@@ -40,6 +38,18 @@ class Contentful {
     } catch (err) {
       return null;
     }
+  }
+
+  async getCategories() {
+    const res = await this.instance.getEntries<
+      EntrySkeletonType<CategoryProps, "category">
+    >({
+      skip: 0,
+      limit: 20,
+      content_type: "category",
+    });
+
+    return res.items || [];
   }
 }
 

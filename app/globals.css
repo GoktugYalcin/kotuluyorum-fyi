@@ -19,6 +19,12 @@ body {
   background: var(--background-rgb);
 }
 
+.categoryCard:hover {
+  transform: rotate(0deg) scale(1.3) !important;
+  z-index: 7 !important;
+  position: relative;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Contentful from "@/lib/contentful";
+import Link from "next/link";
 
 export default async function Navbar() {
   const titleClasses = clsx(
@@ -20,7 +21,9 @@ export default async function Navbar() {
       <ul className="inline-flex gap-9 justify-center items-center px-6 py-4 rounded-2xl bg-gray-300">
         <li className={navClasses}>Anasayfa</li>
         <li className={navClasses}>Ayın en çok kötüleneni</li>
-        <li className={navClasses}>Kategoriler</li>
+        <Link className={navClasses} href={"/category"}>
+          Kategoriler
+        </Link>
       </ul>
     </div>
   );

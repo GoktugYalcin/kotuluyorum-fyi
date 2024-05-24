@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import AnimatedDiv from "@/components/shared/AnimatedDiv";
-import PostPageLinkBanner from "@/components/postPage/PostPageLinkBanner";
+import SharedLinkBanner from "@/components/shared/SharedLinkBanner";
 import PostTitle from "@/components/postPage/PostTitle";
 import PostImprint from "@/components/postPage/PostImprint";
 
@@ -33,7 +33,7 @@ export default async function PostPage({
 
   return (
     <>
-      <PostPageLinkBanner />
+      <SharedLinkBanner />
       <AnimatedDiv
         customClasses="w-full min-h-screen flex-col justify-center items-center px-[500px] py-32"
         transition={200}
