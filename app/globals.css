@@ -20,7 +20,7 @@ body {
 }
 
 .categoryCard:hover {
-  transform: rotate(0deg) scale(1.3) !important;
+  transform: rotate(0deg) scale(1.5) !important;
   z-index: 7 !important;
   position: relative;
 }
