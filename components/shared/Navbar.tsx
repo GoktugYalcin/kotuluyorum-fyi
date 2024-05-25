@@ -12,7 +12,7 @@ export default async function Navbar() {
   )
 
   return (
-    <div className="w-full flex items-center justify-between px-72">
+    <div className="w-full flex items-center justify-between lg:px-72">
       <div className={titleClasses}>
         <Link
           href="/"

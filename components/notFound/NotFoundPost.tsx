@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import React from "react";
-import Lottie from "lottie-react";
-import WalkingAnim from "@/assets/lotties/WalkingAnim.json";
+import React from 'react'
+import Lottie from 'lottie-react'
+import EmptyCategoryAnim from '@/assets/lotties/EmptyCategoryAnim.json'
 
-const NotFoundAnim: React.FC<{}> = () => {
+const NotFoundPost: React.FC<{}> = () => {
   return (
     <Lottie
-      animationData={WalkingAnim}
+      animationData={EmptyCategoryAnim}
       style={{
-        width: 500,
+        width: 500
       }}
       autoPlay
       loop
     />
-  );
-};
+  )
+}
 
-export default NotFoundAnim;
+export default NotFoundPost

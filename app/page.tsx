@@ -1,5 +1,5 @@
 import Navbar from '@/components/shared/Navbar'
-import SummaryCard from '@/components/home/SummaryCard'
+import SummaryCard from '../components/shared/SummaryCard'
 import React from 'react'
 import Link from 'next/link'
 import Contentful from '@/lib/contentful'
