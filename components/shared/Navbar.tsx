@@ -25,7 +25,7 @@ export default async function Navbar() {
         <li className={navClasses}>Anasayfa</li>
         <li className={navClasses}>Ayın en çok kötüleneni</li>
         <Link className={navClasses} href={'/category'}>
-          Etiketler
+          Kategoriler
         </Link>
       </ul>
     </div>
