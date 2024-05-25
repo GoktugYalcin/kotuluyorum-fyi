@@ -1,3 +1,4 @@
 export interface AnimatedCategoryProps {
-  category: string;
+  category: string
+  id: string
 }

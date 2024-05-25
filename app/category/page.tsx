@@ -15,8 +15,8 @@ export default async function CategoriesHome() {
       <div className="w-3/5 min-h-screen pt-48 flex items-center justify-start flex-col gap-24">
         <AnimatedHeader />
         <div className="flex flex-wrap justify-center items-center gap-y-1 w-2/3">
-          {shuffleArray(categories).map((cat, index) => {
-            return <AnimatedCategory category={cat} key={index} />
+          {shuffleArray(categories).map(({ title, id }, index) => {
+            return <AnimatedCategory category={title} id={id} key={index} />
           })}
         </div>
       </div>

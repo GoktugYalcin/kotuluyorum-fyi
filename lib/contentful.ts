@@ -43,7 +43,7 @@ class Contentful {
 
   async getCategories() {
     const res = await this.instance.getTags({})
-    return res.items.map((tag) => tag.sys.id)
+    return res.items.map((tag) => ({ title: tag.name, id: tag.sys.id }))
   }
 
   async getPostsByTag(tag: string) {
@@ -52,7 +52,7 @@ class Contentful {
         skip: 0,
         limit: 20,
         content_type: 'post',
-        // @ts-ignore
+        // @ts-ignore @TODO: Investigate this situation
         'metadata.tags.sys.id[in]': tag
       }
     )

@@ -7,7 +7,10 @@ import { motion } from 'framer-motion'
 import { randomColorGenerate } from '@/lib/randomColorGenerate'
 import { AnimatedCategoryProps } from '@/interfaces/AnimatedCategoryProps'
 
-const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({ category }) => {
+const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({
+  category,
+  id
+}) => {
   const randomColor = randomColorGenerate()
   return (
     <motion.div
@@ -16,7 +19,7 @@ const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({ category }) => {
       transition={{ delay: Math.random() * (0.15 - 0.5) + 0.15 }}
     >
       <Link
-        href={`/category/${category}`}
+        href={`/category/${id}`}
         className="px-4 py-3 rounded-xl transition-all categoryCard flex justify-center items-center gap-1 font-bold"
         style={{
           backgroundColor: randomColor,
