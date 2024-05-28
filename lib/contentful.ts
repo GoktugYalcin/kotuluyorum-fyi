@@ -6,7 +6,7 @@ import {
 } from 'contentful'
 
 import type { Blog } from '@/interfaces/BlogPostProps'
-import { CategoryProps } from '@/interfaces/CategoryProps'
+import { env } from '@/lib/env.mjs'
 
 class Contentful {
   instance: ContentfulClientApi<undefined>
@@ -15,8 +15,8 @@ class Contentful {
   constructor() {
     this.skipPost = 0
     this.instance = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID,
-      accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN
+      space: env.CONTENTFUL_SPACE_ID,
+      accessToken: env.CONTENTFUL_DELIVERY_TOKEN
     })
   }
 

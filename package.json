@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.3.5",
+    "@t3-oss/env-nextjs": "^0.10.1",
     "clsx": "^2.1.1",
     "contentful": "^10.9.0",
     "contentful-management": "^11.25.3",
@@ -22,7 +23,8 @@
     "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
