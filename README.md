@@ -24,10 +24,10 @@ pnpm install && pnpm run dev
 
 ### Gonna develop
 - **Top critized of month side** 
-- **Categories side**
+- ~~**Categories side**~~
 - Vercel pipeline for production.
 - Logging side to Firebase.
-- Better **Headless CMS**(Because Contentful made me sick about interfacing post types. Their docs are too outdated.)
+- ~~Better **Headless CMS**(Because Contentful made me sick about interfacing post types. Their docs are too outdated.)~~
 
 ### Notes
 I'm using Node 20.13.1(LTS) and PNPM for npm packages on this project. But it depends on your interests. 
