@@ -4,14 +4,15 @@ import React from 'react'
 import Luminance from '@/lib/luminance'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { randomColorGenerate } from '@/lib/randomColorGenerate'
 import { AnimatedCategoryProps } from '@/interfaces/AnimatedCategoryProps'
+import { RandomGenerator } from '@/lib/RandomGenerator'
 
 const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({
   category,
   id
 }) => {
-  const randomColor = randomColorGenerate()
+  const random = new RandomGenerator()
+  const randomColor = random.colorGenerate()
   return (
     <motion.div
       initial={{ opacity: 0, y: -1 }}
@@ -20,16 +21,16 @@ const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({
     >
       <Link
         href={`/category/${id}`}
-        className="px-4 py-3 rounded-xl transition-all categoryCard flex justify-center items-center gap-1 font-bold"
+        className="px-4 py-3 rounded-xl transition-all categoryCard flex justify-center items-center gap-1.5 font-bold relative"
         style={{
           backgroundColor: randomColor,
           color: Luminance.decide(randomColor),
           transform: `rotate(${Math.random() * 30 - 20}deg)`,
           transition: 'all 100ms ease-in-out',
-          zIndex: 2
+          zIndex: random.numberGenerate(0, 10)
         }}
       >
-        <span className="text-xl">#</span>
+        <span className="text-3xl">#</span>
         {category}
       </Link>
     </motion.div>

@@ -1,8 +1,7 @@
 import {
   ContentfulClientApi,
   createClient,
-  EntrySkeletonType,
-  TagCollection
+  EntrySkeletonType
 } from 'contentful'
 
 import type { Blog } from '@/interfaces/BlogPostProps'

@@ -8,7 +8,7 @@ export default async function Navbar() {
     'text-2xl font-bold px-6 py-4 rounded-2xl bg-gray-300'
   )
   const navClasses = clsx(
-    'cursor-pointer hover:bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text hover:text-xl transition-all'
+    'cursor-pointer hover:bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text hover:text-xl hover:font-bold transition-all'
   )
 
   return (
