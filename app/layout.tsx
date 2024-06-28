@@ -27,10 +27,10 @@ export default function RootLayout({
         <ThemeProvider>
           <ThemeButton />
           <GridBackground
-            width={20}
-            height={20}
-            x={-1}
-            y={-1}
+            width={30}
+            height={30}
+            x={-10}
+            y={-10}
             className={cn(
               '[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] '
             )}
