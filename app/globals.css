@@ -7,6 +7,10 @@
   --background-rgb: #f8f9f9;
 }
 
+body {
+  transition: all 100ms ease-in-out;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -15,7 +19,6 @@
 }
 
 :root {
-  transition: all 100ms ease-in-out;
   --background-rgb: white;
   --foreground-rgb: black;
   --card-background-to: #E1E7EC;
@@ -24,8 +27,7 @@
 }
 
 [data-theme='dark'] {
-  transition: all 100ms ease-in-out;
-  --background-rgb: #14281D;
+  --background-rgb: #183a27;
   --foreground-rgb: white;
   --card-background-to: #E1E7EC;
   --card-background: #D5DCE3;
