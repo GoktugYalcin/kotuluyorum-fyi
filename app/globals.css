@@ -14,6 +14,24 @@
   }
 }
 
+:root {
+  transition: all 100ms ease-in-out;
+  --background-rgb: white;
+  --foreground-rgb: black;
+  --card-background-to: #E1E7EC;
+  --card-background: #D5DCE3;
+  --card-text: #1f2937;
+}
+
+[data-theme='dark'] {
+  transition: all 100ms ease-in-out;
+  --background-rgb: #14281D;
+  --foreground-rgb: white;
+  --card-background-to: #E1E7EC;
+  --card-background: #D5DCE3;
+  --card-text: #1f2937;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-rgb);

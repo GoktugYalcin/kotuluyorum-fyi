@@ -18,7 +18,7 @@ const SharedLinkBanner: React.FC<{ additionalTitle?: string }> = ({
     >
       <Link
         href="/"
-        className="fixed top-16 left-16 text-2xl font-bold bg-gray-200 px-4 py-2 rounded-xl transition-all hover:bg-gray-300 hover:scale-110 z-40"
+        className="fixed top-16 left-16 text-2xl font-bold bg-gray-200 px-4 py-2 rounded-xl transition-all hover:bg-gray-300 hover:scale-110 z-40 text-[--card-text]"
       >
         Kötülüyorum.fyi
         {!!additionalTitle && ' - '}
