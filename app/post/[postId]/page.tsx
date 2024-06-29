@@ -7,6 +7,18 @@ import AnimatedDiv from '@/components/shared/AnimatedDiv'
 import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
 import PostTitle from '@/components/postPage/PostTitle'
 import PostImprint from '@/components/postPage/PostImprint'
+import { Metadata } from 'next'
+
+export async function generateMetadata({
+  params
+}: PageProps): Promise<Metadata> {
+  const post = await contentful.getPostById(params.postId)
+
+  return {
+    title: `Kotuluyorum.fyi${post?.fields?.title ? ' - ' + post.fields.title : ''}`,
+    description: post?.fields?.midliner ?? ''
+  }
+}
 
 export default async function PostPage({
   params

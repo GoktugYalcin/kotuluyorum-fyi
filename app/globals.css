@@ -29,8 +29,8 @@ body {
 [data-theme='dark'] {
   --background-rgb: #183a27;
   --foreground-rgb: white;
-  --card-background-to: #E1E7EC;
-  --card-background: #D5DCE3;
+  --card-background-to: #8a8a8a;
+  --card-background: #b9b9b9;
   --card-text: #1f2937;
 }
 
