@@ -1,13 +1,16 @@
 import React from 'react'
-import contentful from '@/lib/contentful'
-import { redirect } from 'next/navigation'
+
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
+import { Metadata } from 'next'
+import { redirect } from 'next/navigation'
+
+import PostImprint from '@/components/postPage/PostImprint'
+import PostTitle from '@/components/postPage/PostTitle'
 import AnimatedDiv from '@/components/shared/AnimatedDiv'
 import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
-import PostTitle from '@/components/postPage/PostTitle'
-import PostImprint from '@/components/postPage/PostImprint'
-import { Metadata } from 'next'
+
+import contentful from '@/lib/contentful'
 
 export async function generateMetadata({
   params

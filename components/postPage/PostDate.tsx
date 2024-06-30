@@ -1,6 +1,7 @@
 import React from 'react'
-import dayjs from 'dayjs'
+
 import { PostImprintProps } from '@/interfaces/PostImprintProps'
+import dayjs from 'dayjs'
 
 const PostDate: React.FC<PostImprintProps> = ({ date }) => {
   return (

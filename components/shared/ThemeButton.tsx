@@ -1,10 +1,12 @@
 'use client'
 
 import React from 'react'
-import SunIcon from '@/components/icons/SunIcon'
-import MoonIcon from '@/components/icons/MoonIcon'
-import { useTheme } from 'next-themes'
+
 import { AnimatePresence, motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
+
+import MoonIcon from '@/components/icons/MoonIcon'
+import SunIcon from '@/components/icons/SunIcon'
 
 const ThemeButton = () => {
   const { theme, setTheme } = useTheme()

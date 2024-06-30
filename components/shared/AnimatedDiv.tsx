@@ -1,12 +1,13 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
-import { AnimatedDivProps } from "@/interfaces/AnimatedDivProps";
+import React from 'react'
+
+import { AnimatedDivProps } from '@/interfaces/AnimatedDivProps'
+import { motion } from 'framer-motion'
 
 const AnimatedDiv: React.FC<AnimatedDivProps> = ({
   children,
-  customClasses = "",
+  customClasses = ''
 }) => {
   return (
     <motion.div
@@ -15,12 +16,12 @@ const AnimatedDiv: React.FC<AnimatedDivProps> = ({
       animate={{ opacity: 1 }}
       transition={{
         stiffness: 260,
-        damping: 20,
+        damping: 20
       }}
     >
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
-export default AnimatedDiv;
+export default AnimatedDiv

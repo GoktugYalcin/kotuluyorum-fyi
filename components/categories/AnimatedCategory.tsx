@@ -1,11 +1,13 @@
 'use client'
 
 import React from 'react'
-import Luminance from '@/lib/luminance'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+
 import { AnimatedCategoryProps } from '@/interfaces/AnimatedCategoryProps'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+
 import { RandomGenerator } from '@/lib/RandomGenerator'
+import Luminance from '@/lib/luminance'
 
 const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({
   category,

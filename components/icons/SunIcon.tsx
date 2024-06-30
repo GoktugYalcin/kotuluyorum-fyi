@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { IconProps } from '@/interfaces/IconProps'
 
 const SunIcon: React.FC<IconProps> = ({ size }) => {

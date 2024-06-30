@@ -1,5 +1,4 @@
-import { ContentfulCollection, Tag, TagCollection, TagLink } from 'contentful'
-import Contentful from '@/lib/contentful'
+import { TagLink } from 'contentful'
 
 export type PostImprintProps = {
   midliner?: string

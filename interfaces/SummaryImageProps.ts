@@ -1,6 +1,5 @@
 interface SummaryImageProps {
-    src: string
+  src: string
 }
 
-
-export type { SummaryImageProps };
+export type { SummaryImageProps }

@@ -1,7 +1,8 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+
+import { motion } from 'framer-motion'
 
 const AnimatedHeader: React.FC<{}> = () => {
   return (
@@ -13,7 +14,7 @@ const AnimatedHeader: React.FC<{}> = () => {
       Buradaki kategorilere göre kötülemeleri görüntüleyebilir, daha spesifik
       bir şekilde can sıkabilirsiniz.
     </motion.h2>
-  );
-};
+  )
+}
 
-export default AnimatedHeader;
+export default AnimatedHeader

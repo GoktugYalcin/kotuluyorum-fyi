@@ -1,7 +1,9 @@
 'use client'
 
 import React from 'react'
+
 import Lottie from 'lottie-react'
+
 import EmptyCategoryAnim from '@/assets/lotties/EmptyCategoryAnim.json'
 
 const NotFoundPost: React.FC<{}> = () => {

@@ -1,13 +1,15 @@
 'use client'
 
 import React from 'react'
-import SummaryImage from '@/components/shared/SummaryCard/SummaryImage'
+
 import { SummaryCardProps } from '@/interfaces/SummaryCardProps'
-import { DM_Sans } from 'next/font/google'
 import clsx from 'clsx'
 import dayjs from 'dayjs'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { DM_Sans } from 'next/font/google'
+import Link from 'next/link'
+
+import SummaryImage from '@/components/shared/SummaryCard/SummaryImage'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 

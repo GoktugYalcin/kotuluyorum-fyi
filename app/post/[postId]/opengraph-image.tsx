@@ -1,6 +1,7 @@
-import { ImageResponse } from 'next/og'
-import contentful from '@/lib/contentful'
 import { Metadata } from 'next'
+import { ImageResponse } from 'next/og'
+
+import contentful from '@/lib/contentful'
 
 export const alt = 'Kötülüyorum.fyi'
 export const size = {

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { BlogPostTitleProps } from '@/interfaces/BlogPostTitleProps'
 import { Space_Grotesk } from 'next/font/google'
 

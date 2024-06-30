@@ -1,10 +1,10 @@
+import type { Blog } from '@/interfaces/BlogPostProps'
 import {
   ContentfulClientApi,
-  createClient,
-  EntrySkeletonType
+  EntrySkeletonType,
+  createClient
 } from 'contentful'
 
-import type { Blog } from '@/interfaces/BlogPostProps'
 import { env } from '@/lib/env.mjs'
 
 class Contentful {

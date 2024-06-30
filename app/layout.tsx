@@ -1,12 +1,16 @@
-import type { Metadata } from 'next'
-import { Space_Grotesk } from 'next/font/google'
-import './globals.css'
-import { cn } from '@/lib/cn'
-import GridBackground from '@/components/shared/GridBackground'
 import React from 'react'
-import Footer from '@/components/shared/Footer'
-import ThemeButton from '@/components/shared/ThemeButton'
+
+import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
+import { Space_Grotesk } from 'next/font/google'
+
+import Footer from '@/components/shared/Footer'
+import GridBackground from '@/components/shared/GridBackground'
+import ThemeButton from '@/components/shared/ThemeButton'
+
+import './globals.css'
+
+import { cn } from '@/lib/cn'
 
 const Space = Space_Grotesk({ subsets: ['latin'] })
 

@@ -1,10 +1,11 @@
-import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
-import contentful from '@/lib/contentful'
-import SummaryCard from '@/components/shared/SummaryCard'
 import { Asset } from 'contentful'
-import NotFoundAnim from '@/components/notFound/NotFoundAnim'
 import Link from 'next/link'
+
 import NotFoundPost from '@/components/notFound/NotFoundPost'
+import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
+import SummaryCard from '@/components/shared/SummaryCard'
+
+import contentful from '@/lib/contentful'
 
 export default async function CategoryListPage({
   params

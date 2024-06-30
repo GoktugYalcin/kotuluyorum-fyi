@@ -1,10 +1,11 @@
-import Navbar from '@/components/shared/Navbar'
-import SummaryCard from '../components/shared/SummaryCard'
 import React from 'react'
-import Link from 'next/link'
-import Contentful from '@/lib/contentful'
-import dayjs from 'dayjs'
+
 import { Asset } from 'contentful'
+
+import Navbar from '@/components/shared/Navbar'
+import SummaryCard from '@/components/shared/SummaryCard'
+
+import Contentful from '@/lib/contentful'
 
 export default async function Home() {
   const posts = await Contentful.getPosts(0)

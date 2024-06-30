@@ -1,5 +1,6 @@
-import Link from "next/link";
-import NotFoundAnim from "@/components/notFound/NotFoundAnim";
+import Link from 'next/link'
+
+import NotFoundAnim from '@/components/notFound/NotFoundAnim'
 
 export default async function NotFound() {
   return (
@@ -20,5 +21,5 @@ export default async function NotFound() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { PostImprintProps } from '@/interfaces/PostImprintProps'
 import Link from 'next/link'
+
 import { RandomGenerator } from '@/lib/RandomGenerator'
 
 const PostTags: React.FC<PostImprintProps> = ({ tags }) => {

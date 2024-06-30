@@ -1,7 +1,9 @@
 import React from 'react'
+
 import { PostImprintProps } from '@/interfaces/PostImprintProps'
-import PostMidliner from '@/components/postPage/PostMidliner'
+
 import PostDate from '@/components/postPage/PostDate'
+import PostMidliner from '@/components/postPage/PostMidliner'
 import PostTags from '@/components/postPage/PostTags'
 
 const PostImprint: React.FC<PostImprintProps> = ({ midliner, date, tags }) => {
