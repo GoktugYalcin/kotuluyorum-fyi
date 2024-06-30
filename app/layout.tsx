@@ -11,6 +11,11 @@ import { ThemeProvider } from 'next-themes'
 const Space = Space_Grotesk({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'development'
+      ? 'https://localhost:3000'
+      : 'https://kotuluyorum.fyi'
+  ),
   creator: 'A. Göktuğ Yalçın',
   title: 'Kötülüyorum.fyi',
   description: 'Neden bir ürün tamamen iyi olsun ki?'

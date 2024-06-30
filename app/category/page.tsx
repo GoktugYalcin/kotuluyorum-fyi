@@ -9,6 +9,11 @@ import AnimatedCategory from '@/components/categories/AnimatedCategory'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'development'
+      ? 'https://localhost:3000'
+      : 'https://kotuluyorum.fyi'
+  ),
   title: 'Kötülüyorum.fyi - Kategoriler',
   description:
     'Eleştiri yazılarını bu sayfadan kategorileyerek istediğiniz düzende bulabilirsiniz.'

@@ -10,7 +10,7 @@ const ThemeButton = () => {
   const { theme, setTheme } = useTheme()
   return (
     <span
-      className="ml-4 px-4 py-4 bg-gray-300 rounded-2xl hover:scale-110 text-[--card-text] transition-all cursor-pointer fixed right-16 top-[70px] z-[300] overflow-hidden active:scale-105 select-none"
+      className="ml-4 px-4 py-4 bg-gray-300 rounded-2xl hover:scale-110 text-[--card-text] transition-all cursor-pointer fixed right-16 top-[70px] z-[300] overflow-hidden active:scale-105 select-none hover:text-green-300"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <AnimatePresence>

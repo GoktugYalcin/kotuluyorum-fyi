@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
 import contentful from '@/lib/contentful'
+import { Metadata } from 'next'
 
 export const alt = 'Kötülüyorum.fyi'
 export const size = {
@@ -8,6 +9,14 @@ export const size = {
 }
 
 export const contentType = 'image/png'
+
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'development'
+      ? 'https://localhost:3000'
+      : 'https://kotuluyorum.fyi'
+  )
+}
 
 // Image generation
 export default async function Image({
