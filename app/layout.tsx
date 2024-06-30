@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       : 'https://kotuluyorum.fyi'
   ),
   creator: 'A. Göktuğ Yalçın',
-  title: 'Kötülüyorum.fyi',
+  title: 'Kötülüyorum.fyi - Ana Sayfa',
   description: 'Neden bir ürün tamamen iyi olsun ki?'
 }
 
