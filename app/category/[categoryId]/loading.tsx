@@ -7,6 +7,9 @@ export default function Loading() {
       <SharedLinkBanner />
       <div className="w-full pt-48 min-h-screen px-52 flex justify-start items-start gap-24 flex-wrap">
         <SummaryLoader />
+        <SummaryLoader />
+        <SummaryLoader />
+        <SummaryLoader />
       </div>
     </>
   )
