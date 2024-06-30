@@ -2,7 +2,7 @@ import React from 'react'
 import contentful from '@/lib/contentful'
 import { redirect } from 'next/navigation'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
 import AnimatedDiv from '@/components/shared/AnimatedDiv'
 import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
 import PostTitle from '@/components/postPage/PostTitle'
@@ -15,7 +15,7 @@ export async function generateMetadata({
   const post = await contentful.getPostById(params.postId)
 
   return {
-    title: `Kotuluyorum.fyi${post?.fields?.title ? ' - ' + post.fields.title : ''}`,
+    title: `Kötülüyorum.fyi${post?.fields?.title ? ' - ' + post.fields.title : ''}`,
     description: post?.fields?.midliner ?? ''
   }
 }
@@ -36,6 +36,19 @@ export default async function PostPage({
       [MARKS.ITALIC]: (text) => `<i>${text}</i>`
     },
     renderNode: {
+      [INLINES.HYPERLINK]: (node) => {
+        // @ts-ignore
+        let value = node.content[0].value // This 'value' prop is not implemented already??
+        let uri = node.data.uri
+
+        return `<a
+            style="font-weight: bolder;text-decoration: underline"
+            href="${uri}"
+            target="_blank"
+          >
+            ${value}
+          </a>`
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
         `<img src="https:${node.data.target.fields.file.url}" />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`

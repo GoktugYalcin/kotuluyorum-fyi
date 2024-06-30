@@ -24,6 +24,7 @@ body {
   --card-background-to: #E1E7EC;
   --card-background: #D5DCE3;
   --card-text: #1f2937;
+  --post-date-color: #16a34a;
 }
 
 [data-theme='dark'] {
@@ -32,6 +33,7 @@ body {
   --card-background-to: #8a8a8a;
   --card-background: #b9b9b9;
   --card-text: #1f2937;
+  --post-date-color: #69ee9a;
 }
 
 body {

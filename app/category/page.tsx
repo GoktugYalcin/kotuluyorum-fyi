@@ -6,6 +6,13 @@ import { shuffleArray } from '@/lib/shuffleArray'
 import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
 import AnimatedHeader from '@/components/categories/AnimatedHeader'
 import AnimatedCategory from '@/components/categories/AnimatedCategory'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Kötülüyorum.fyi - Kategoriler',
+  description:
+    'Eleştiri yazılarını bu sayfadan kategorileyerek istediğiniz düzende bulabilirsiniz.'
+}
 
 export default async function CategoriesHome() {
   const categories = await contentful.getCategories()
