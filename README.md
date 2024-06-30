@@ -29,6 +29,8 @@ pnpm install && pnpm run dev
 - ~~Dynamic OG image generation for posts.~~
 - Logging side to Firebase. (Is it really necessary? 🤔)
 - ~~Better **Headless CMS**(Because Contentful made me sick about interfacing post types. Their docs are too outdated.)~~
+- Add boo counts for top critized.
+- Add comments section for posts.
 
 ### Notes
 I'm using Node 20.13.1(LTS) and PNPM for npm packages on this project. But it can depend on your interests. 
