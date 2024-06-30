@@ -35,7 +35,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
         target="_blank"
         className="flex flex-col w-96 p-8 bg-gradient-to-br from-[--card-background] to-[--card-background-to] rounded-xl gap-2 group"
       >
-        <SummaryImage src={imageSrc} />
+        <SummaryImage src={imageSrc} alt={title} />
         <div className="flex flex-col justify-start gap-1 text-[--card-text]">
           <span className="font-bold text-lg">{title}</span>
           <span className={timeLabel}>{dayjs(date).format('D.MM.YYYY')}</span>

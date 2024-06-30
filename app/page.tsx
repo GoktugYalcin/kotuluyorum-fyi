@@ -23,19 +23,17 @@ export default async function Home() {
           </h1>
         </div>
         <article className="w-full pt-24 px-40 flex flex-wrap justify-start gap-10">
-          {posts.map((post) => {
-            return (
-              <SummaryCard
-                title={post.fields.title}
-                imageSrc={`https://${((post.fields.postimage as Asset).fields
-                  ?.file?.url as string)!.replace('//', '')}`}
-                key={post.sys.id}
-                summary={post.fields.midliner}
-                postUrl={`/post/${post.sys.id}`}
-                date={post.sys.updatedAt}
-              />
-            )
-          })}
+          {posts.map((post) => (
+            <SummaryCard
+              title={post.fields.title}
+              imageSrc={`https://${((post.fields.postimage as Asset).fields
+                ?.file?.url as string)!.replace('//', '')}`}
+              key={post.sys.id}
+              summary={post.fields.midliner}
+              postUrl={`/post/${post.sys.id}`}
+              date={post.sys.updatedAt}
+            />
+          ))}
         </article>
       </div>
     </main>
