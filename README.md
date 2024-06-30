@@ -13,7 +13,7 @@ One day; when I'm tweeting, said to myself "Why do not I'm writing a blog about 
 ### What you need?
  
 - A **Contentful** account and the keys that you can find on ```.env.example```
-- React and Next skills
+- React and Next.js skills
 
 ### How to run?
 
@@ -26,8 +26,9 @@ pnpm install && pnpm run dev
 - **Top critized of month side** 
 - ~~**Categories side**~~
 - Vercel pipeline for production.
-- Logging side to Firebase.
+- ~~Dynamic OG image generation for posts.~~
+- Logging side to Firebase. (Is it really necessary? 🤔)
 - ~~Better **Headless CMS**(Because Contentful made me sick about interfacing post types. Their docs are too outdated.)~~
 
 ### Notes
-I'm using Node 20.13.1(LTS) and PNPM for npm packages on this project. But it depends on your interests. 
+I'm using Node 20.13.1(LTS) and PNPM for npm packages on this project. But it can depend on your interests. 
