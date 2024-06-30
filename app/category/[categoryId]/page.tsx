@@ -7,6 +7,8 @@ import SummaryCard from '@/components/shared/SummaryCard'
 
 import contentful from '@/lib/contentful'
 
+export const revalidate = 1
+
 export default async function CategoryListPage({
   params
 }: {
