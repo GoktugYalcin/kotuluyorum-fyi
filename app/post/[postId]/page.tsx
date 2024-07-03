@@ -12,9 +12,7 @@ import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
 
 import contentful from '@/lib/contentful'
 
-export async function generateMetadata({
-  params
-}: PageProps): Promise<Metadata> {
+export async function generateStaticParams({ params }: PageProps) {
   const post = await contentful.getPostById(params.postId)
 
   return {
@@ -23,12 +21,21 @@ export async function generateMetadata({
   }
 }
 
-export default async function PostPage({
+export async function generateMetadata({
   params
-}: {
-  params: { postId: string }
-}) {
+}: PageProps): Promise<{ post: { description: string; title: string } }> {
   const post = await contentful.getPostById(params.postId)
+
+  return {
+    post: {
+      title: `Kötülüyorum.fyi${post?.fields?.title ? ' - ' + post.fields.title : ''}`,
+      description: post?.fields?.midliner ?? ''
+    }
+  }
+}
+
+export default async function PostPage({ params }: { params: { post } }) {
+  const { post } = params
   if (!post) {
     redirect('/404')
   }
