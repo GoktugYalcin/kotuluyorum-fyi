@@ -1,7 +1,13 @@
 import React from 'react'
 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
+import {
+  BLOCKS,
+  Block,
+  INLINES,
+  Inline,
+  MARKS
+} from '@contentful/rich-text-types'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -52,12 +58,15 @@ export default async function PostPage({ params }: PageProps) {
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        const value = node.content.reduce((acc, content) => {
-          if (isTextNode(content)) {
-            return acc + content.value!
-          }
-          return acc
-        }, '')
+        const value = node.content.reduce(
+          (acc: string, content: Block | Inline | Text) => {
+            if (isTextNode(content)) {
+              return acc + content.value
+            }
+            return acc
+          },
+          ''
+        )
         const uri = node.data.uri
 
         return `
