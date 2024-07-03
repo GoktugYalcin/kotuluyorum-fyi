@@ -3,7 +3,7 @@ import React from 'react'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
 import { Metadata } from 'next'
-import { redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
 import PostImprint from '@/components/postPage/PostImprint'
 import PostTitle from '@/components/postPage/PostTitle'
@@ -12,32 +12,34 @@ import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
 
 import contentful from '@/lib/contentful'
 
-export async function generateStaticParams({ params }: PageProps) {
-  const post = await contentful.getPostById(params.postId)
+type PageProps = {
+  params: { postId: string }
+}
 
-  return {
-    title: `Kötülüyorum.fyi${post?.fields?.title ? ' - ' + post.fields.title : ''}`,
-    description: post?.fields?.midliner ?? ''
-  }
+export async function generateStaticParams() {
+  // Fetch all post IDs here
+  const posts = await contentful.getPosts(0)
+  return posts.map((post) => ({
+    postId: post.sys.id
+  }))
 }
 
 export async function generateMetadata({
   params
-}: PageProps): Promise<{ post: { description: string; title: string } }> {
+}: PageProps): Promise<Metadata> {
   const post = await contentful.getPostById(params.postId)
+  if (!post) return {}
 
   return {
-    post: {
-      title: `Kötülüyorum.fyi${post?.fields?.title ? ' - ' + post.fields.title : ''}`,
-      description: post?.fields?.midliner ?? ''
-    }
+    title: `Kötülüyorum.fyi${post.fields.title ? ' - ' + post.fields.title : ''}`,
+    description: post.fields.midliner ?? ''
   }
 }
 
-export default async function PostPage({ params }: { params: { post } }) {
-  const { post } = params
+export default async function PostPage({ params }: PageProps) {
+  const post = await contentful.getPostById(params.postId)
   if (!post) {
-    redirect('/404')
+    notFound()
   }
 
   const parsedContentToMarkdown = documentToHtmlString(post.fields.content, {
@@ -47,11 +49,10 @@ export default async function PostPage({ params }: { params: { post } }) {
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        // @ts-ignore
-        let value = node.content[0].value // This 'value' prop is not implemented already??
-        let uri = node.data.uri
+        const value = node.content[0].value
+        const uri = node.data.uri
 
-        return `<a
+        return `
             style="font-weight: bolder;text-decoration: underline"
             href="${uri}"
             target="_blank"
@@ -59,7 +60,7 @@ export default async function PostPage({ params }: { params: { post } }) {
             ${value}
           </a>`
       },
-      [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
+      [BLOCKS.EMBEDDED_ASSET]: (node) =>
         `<img src="https:${node.data.target.fields.file.url}" />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`
     },
