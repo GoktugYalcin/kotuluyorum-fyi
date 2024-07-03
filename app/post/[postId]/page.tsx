@@ -49,7 +49,7 @@ export default async function PostPage({ params }: PageProps) {
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        const value = node.content[0].value
+        const value = (node.content[0] as any).value
         const uri = node.data.uri
 
         return `
