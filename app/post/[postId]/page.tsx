@@ -34,7 +34,10 @@ export async function generateMetadata({
 
   return {
     title: `Kötülüyorum.fyi${post.fields.title ? ' - ' + post.fields.title : ''}`,
-    description: post.fields.midliner ?? ''
+    description: post.fields.midliner ?? '',
+    openGraph: {
+      images: `/blog/${post.sys.id}/og.png`
+    }
   }
 }
 
