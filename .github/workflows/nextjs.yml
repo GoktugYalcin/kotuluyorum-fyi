@@ -9,6 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: github-pages
+    env:
+      CONTENTFUL_BASE_URL: ${{ vars.CONTENTFUL_BASE_URL }}
+      CONTENTFUL_SPACE_ID: ${{ vars.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_PREVIEW_TOKEN: ${{ vars.CONTENTFUL_PREVIEW_TOKEN }}
+      CONTENTFUL_DELIVERY_TOKEN: ${{ vars.CONTENTFUL_DELIVERY_TOKEN }}
+      CONTENTFUL_MANAGEMENT_TOKEN: ${{ vars.CONTENTFUL_MANAGEMENT_TOKEN }}
 
     steps:
       - name: Checkout code
