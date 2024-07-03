@@ -15,7 +15,7 @@ export const generateStaticParams = async () => {
   const res = await contentful.getPosts(0)
 
   const paths = res.map((item) => ({
-    params: { postId: item.fields.id }
+    params: { postId: item.sys.id }
   }))
 
   return paths
