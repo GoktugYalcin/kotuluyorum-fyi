@@ -4,7 +4,9 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { ImageResponse } from 'next/og'
 
+import { generateOgImage } from '@/components/postPage/OGImage'
 import PostImprint from '@/components/postPage/PostImprint'
 import PostTitle from '@/components/postPage/PostTitle'
 import AnimatedDiv from '@/components/shared/AnimatedDiv'
@@ -19,11 +21,16 @@ type PageProps = {
 export async function generateStaticParams() {
   const posts = await contentful.getPosts(0)
   return posts.map((post) => ({
-    postId: post.sys.id,
-    openGraph: {
-      images: `/blog/${post.sys.id}/og.png`
-    }
+    postId: post.sys.id
   }))
+}
+
+export async function GET(
+  req: Request,
+  { params }: { params: { postId: string } }
+) {
+  const post = await contentful.getPostById(params.postId)
+  return new ImageResponse(generateOgImage(post?.fields.title as string))
 }
 
 export async function generateMetadata({
