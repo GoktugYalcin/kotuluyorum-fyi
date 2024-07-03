@@ -12,15 +12,12 @@ import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
 
 import contentful from '@/lib/contentful'
 
-function isTextNode(node: any): node is Text {
-  return node.nodeType === 'text'
-}
-
 type PageProps = {
   params: { postId: string }
 }
 
 export async function generateStaticParams() {
+  // Fetch all post IDs here
   const posts = await contentful.getPosts(0)
   return posts.map((post) => ({
     postId: post.sys.id
@@ -52,21 +49,16 @@ export default async function PostPage({ params }: PageProps) {
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        const value = node.content.reduce((acc, content) => {
-          if (isTextNode(content)) {
-            return acc + content.value!
-          }
-          return acc
-        }, '')
+        const value = node.content[0].value
         const uri = node.data.uri
 
         return `
-        <a style="font-weight: bolder;text-decoration: underline"
-        href="${uri}"
-        target="_blank"
-      >
-        ${value}
-      </a>`
+            style="font-weight: bolder;text-decoration: underline"
+            href="${uri}"
+            target="_blank"
+          >
+            ${value}
+          </a>`
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) =>
         `<img src="https:${node.data.target.fields.file.url}" />`,
