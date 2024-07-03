@@ -59,4 +59,6 @@ class Contentful {
   }
 }
 
-export default new Contentful()
+const contentfulClient = new Contentful()
+
+export default contentfulClient

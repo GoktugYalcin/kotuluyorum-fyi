@@ -76,7 +76,7 @@ export default async function Image({
             marginTop: 30
           }}
         >
-          <img
+          <Image
             alt="authors profile photo"
             width="44"
             height="44"
