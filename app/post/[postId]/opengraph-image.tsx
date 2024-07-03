@@ -11,6 +11,13 @@ export const size = {
 
 export const contentType = 'image/png'
 
+export async function generateStaticParams() {
+  const posts = await contentful.getPosts(0)
+  return posts.map((post) => ({
+    postId: post.sys.id
+  }))
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === 'development'
