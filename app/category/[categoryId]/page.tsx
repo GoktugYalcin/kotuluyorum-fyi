@@ -9,6 +9,13 @@ import contentful from '@/lib/contentful'
 
 export const revalidate = 1
 
+export async function generateStaticParams() {
+  const posts = await contentful.getCategories()
+  return posts.map((post) => ({
+    categoryId: post.id
+  }))
+}
+
 export default async function CategoryListPage({
   params
 }: {

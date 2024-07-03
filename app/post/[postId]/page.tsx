@@ -17,7 +17,6 @@ type PageProps = {
 }
 
 export async function generateStaticParams() {
-  // Fetch all post IDs here
   const posts = await contentful.getPosts(0)
   return posts.map((post) => ({
     postId: post.sys.id
