@@ -19,7 +19,10 @@ type PageProps = {
 export async function generateStaticParams() {
   const posts = await contentful.getPosts(0)
   return posts.map((post) => ({
-    postId: post.sys.id
+    postId: post.sys.id,
+    openGraph: {
+      images: `/blog/${post.sys.id}/og.png`
+    }
   }))
 }
 

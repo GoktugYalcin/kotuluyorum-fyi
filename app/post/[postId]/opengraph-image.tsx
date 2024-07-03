@@ -11,11 +11,14 @@ export const size = {
 
 export const contentType = 'image/png'
 
-export async function generateStaticParams() {
-  const posts = await contentful.getPosts(0)
-  return posts.map((post) => ({
-    postId: post.sys.id
+export const generateStaticParams = async () => {
+  const res = await contentful.getPosts(0)
+
+  const paths = res.map((item) => ({
+    params: { postId: item.fields.id }
   }))
+
+  return paths
 }
 
 export const metadata: Metadata = {
