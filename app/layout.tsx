@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === 'development'
       ? 'https://localhost:3000'
-      : 'https://kotuluyorum.fyi'
+      : 'https://goktugyalcin.github.io/kotuluyorum-fyi'
   ),
   creator: 'A. Göktuğ Yalçın',
   title: 'Kötülüyorum.fyi - Ana Sayfa',

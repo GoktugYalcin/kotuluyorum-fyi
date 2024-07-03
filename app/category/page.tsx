@@ -1,18 +1,19 @@
 import React from 'react'
 
+import { Metadata } from 'next'
+
+import AnimatedCategory from '@/components/categories/AnimatedCategory'
+import AnimatedHeader from '@/components/categories/AnimatedHeader'
+import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
+
 import contentful from '@/lib/contentful'
 import { shuffleArray } from '@/lib/shuffleArray'
-
-import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
-import AnimatedHeader from '@/components/categories/AnimatedHeader'
-import AnimatedCategory from '@/components/categories/AnimatedCategory'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === 'development'
       ? 'https://localhost:3000'
-      : 'https://kotuluyorum.fyi'
+      : 'https://goktugyalcin.github.io/kotuluyorum-fyi'
   ),
   title: 'Kötülüyorum.fyi - Kategoriler',
   description:
