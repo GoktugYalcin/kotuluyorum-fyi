@@ -27,6 +27,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    environment: github-pages
     env:
       CONTENTFUL_BASE_URL: ${{ vars.CONTENTFUL_BASE_URL }}
       CONTENTFUL_SPACE_ID: ${{ vars.CONTENTFUL_SPACE_ID }}
