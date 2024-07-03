@@ -21,7 +21,7 @@ export async function generateStaticParams() {
   return posts.map((post) => ({
     postId: post.sys.id,
     openGraph: {
-      images: `/blog/${post.sys.id}/og.png`
+      images: `/post/${post.sys.id}/og.png`
     }
   }))
 }
@@ -36,7 +36,7 @@ export async function generateMetadata({
     title: `Kötülüyorum.fyi${post.fields.title ? ' - ' + post.fields.title : ''}`,
     description: post.fields.midliner ?? '',
     openGraph: {
-      images: `/blog/${post.sys.id}/og.png`
+      images: `/post/${post.sys.id}/og.png`
     }
   }
 }
