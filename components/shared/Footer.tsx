@@ -11,7 +11,7 @@ const Footer = () => {
     <motion.footer
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="fixed right-16 bottom-16"
+      className="hidden lg:inline-flex fixed right-16 bottom-16"
     >
       <Link href={'https://gokyalc.in'} target={'_blank'}>
         {`${dayjs().year()} - A. Göktuğ Yalçın`}

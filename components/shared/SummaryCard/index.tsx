@@ -33,7 +33,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
       <Link
         href={postUrl}
         target="_blank"
-        className="flex flex-col w-96 p-8 bg-gradient-to-br from-[--card-background] to-[--card-background-to] rounded-xl gap-2 group"
+        className="flex flex-col lg:w-96 w-80 p-8 bg-gradient-to-br from-[--card-background] to-[--card-background-to] rounded-xl gap-2 group"
       >
         <SummaryImage src={imageSrc} alt={title} />
         <div className="flex flex-col justify-start gap-1 text-[--card-text]">

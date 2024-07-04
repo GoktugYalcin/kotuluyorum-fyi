@@ -34,7 +34,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={Space.className}>
         <ThemeProvider>
-          <ThemeButton />
           <GridBackground
             width={30}
             height={30}
