@@ -58,7 +58,7 @@ export default async function PostPage({ params }: PageProps) {
         const uri = node.data.uri
 
         return `
-            style="font-weight: bolder;text-decoration: underline"
+            <a style="font-weight: bolder;text-decoration: underline"
             href="${uri}"
             target="_blank"
           >
