@@ -23,7 +23,7 @@ const AnimatedCategory: React.FC<AnimatedCategoryProps> = ({
     >
       <Link
         href={`/category/${id}`}
-        className="px-4 py-3 rounded-xl transition-all categoryCard flex justify-center items-center gap-1.5 font-bold relative"
+        className="lg:px-4 px-2 lg:py-3 py-1 rounded-xl transition-all categoryCard flex justify-center items-center gap-1 font-bold relative"
         style={{
           backgroundColor: randomColor,
           color: Luminance.decide(randomColor),

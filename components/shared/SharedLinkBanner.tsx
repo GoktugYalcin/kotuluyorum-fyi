@@ -10,6 +10,7 @@ const SharedLinkBanner: React.FC<{ additionalTitle?: string }> = ({
 }) => {
   return (
     <motion.span
+      className="lg:absolute sticky w-full lg:ml-0 ml-4 lg:inline flex justify-start items-center lg:top-16 top-3 lg:left-16 z-40"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
@@ -19,7 +20,7 @@ const SharedLinkBanner: React.FC<{ additionalTitle?: string }> = ({
     >
       <Link
         href="/"
-        className="fixed top-16 left-16 text-2xl font-bold bg-gray-200 px-4 py-2 rounded-xl transition-all hover:bg-gray-300 hover:scale-110 z-40 text-[--card-text]"
+        className="lg:text-2xl text-lg font-bold bg-gray-200 lg:px-4 px-3 py-2 rounded-xl transition-all hover:bg-gray-300 hover:scale-110 text-[--card-text]"
       >
         Kötülüyorum.fyi
         {!!additionalTitle && ' - '}

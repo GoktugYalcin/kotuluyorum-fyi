@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 export default async function CategoriesHome() {
   const categories = await contentful.getCategories()
   return (
-    <div className="w-full min-h-screen flex items-center justify-center">
+    <div className="w-full min-h-screen flex flex-col items-center justify-start">
       <SharedLinkBanner additionalTitle={'Kategoriler'} />
-      <div className="w-3/5 min-h-screen pt-48 flex items-center justify-start flex-col gap-24">
+      <div className="lg:w-3/5 w-full min-h-screen lg:pt-48 pt-14 lg:px-0 pb-12 lg:pb-0 px-2 flex flex-col items-center gap-12">
         <AnimatedHeader />
-        <div className="flex flex-wrap justify-center items-center gap-y-1 w-2/3">
+        <div className="flex flex-wrap justify-center items-center gap-1 w-full">
           {shuffleArray(categories).map(({ title, id }, index) => {
             return <AnimatedCategory category={title} id={id} key={index} />
           })}
