@@ -10,7 +10,7 @@ const SharedLinkBanner: React.FC<{ additionalTitle?: string }> = ({
 }) => {
   return (
     <motion.span
-      className="lg:absolute sticky w-full lg:ml-0 ml-4 lg:inline flex justify-start items-center lg:top-16 top-3 lg:left-16 z-40"
+      className="lg:absolute sticky w-3/4 lg:ml-0 ml-4 lg:inline flex justify-start items-center lg:top-16 top-4 lg:left-16 z-40"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{

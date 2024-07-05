@@ -8,7 +8,7 @@ import { useTheme } from 'next-themes'
 import MoonIcon from '@/components/icons/MoonIcon'
 import SunIcon from '@/components/icons/SunIcon'
 
-const ThemeButton = () => {
+const ThemeButton: React.FC = () => {
   const { theme, setTheme } = useTheme()
   return (
     <span

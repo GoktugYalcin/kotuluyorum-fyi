@@ -9,6 +9,7 @@ import PostImprint from '@/components/postPage/PostImprint'
 import PostTitle from '@/components/postPage/PostTitle'
 import AnimatedDiv from '@/components/shared/AnimatedDiv'
 import SharedLinkBanner from '@/components/shared/SharedLinkBanner'
+import ThemeButton from '@/components/shared/ThemeButton'
 
 import contentful from '@/lib/contentful'
 
@@ -66,7 +67,7 @@ export default async function PostPage({ params }: PageProps) {
           </a>`
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) =>
-        `<img src="https:${node.data.target.fields.file.url}" />`,
+        `<img alt="asset" class="w-full max-w-full h-auto" src="https:${node.data.target.fields.file.url}" />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`
     },
     preserveWhitespace: true
@@ -76,19 +77,21 @@ export default async function PostPage({ params }: PageProps) {
     <>
       <SharedLinkBanner additionalTitle={'İnceleme'} />
       <AnimatedDiv
-        customClasses="w-full min-h-screen flex-col justify-center items-center px-[500px] py-32"
+        customClasses="w-full min-h-screen flex-col justify-start items-center px-2 lg:px-8 py-16 lg:py-32"
         transition={200}
       >
-        <PostTitle title={post.fields.title} />
-        <PostImprint
-          date={post.sys.updatedAt}
-          midliner={post.fields.midliner}
-          tags={post.metadata.tags}
-        />
-        <div
-          className="mt-6 flex flex-col gap-2 justify-start items-start text-md"
-          dangerouslySetInnerHTML={{ __html: parsedContentToMarkdown }}
-        ></div>
+        <div className="w-full max-w-3xl mx-auto">
+          <PostTitle title={post.fields.title} />
+          <PostImprint
+            date={post.sys.updatedAt}
+            midliner={post.fields.midliner}
+            tags={post.metadata.tags}
+          />
+          <div
+            className="mt-6 flex flex-col gap-2 justify-center items-start lg:text-md text-sm flex-wrap break-words"
+            dangerouslySetInnerHTML={{ __html: parsedContentToMarkdown }}
+          ></div>
+        </div>
       </AnimatedDiv>
     </>
   )

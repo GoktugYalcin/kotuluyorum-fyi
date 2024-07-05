@@ -8,7 +8,7 @@ import { RandomGenerator } from '@/lib/RandomGenerator'
 const PostTags: React.FC<PostImprintProps> = ({ tags }) => {
   const random = new RandomGenerator()
   return (
-    <div className="flex justify-start items-center gap-2">
+    <div className="flex justify-start items-center gap-2 flex-wrap">
       {tags?.map((tag, index) => (
         <Link
           key={index}
