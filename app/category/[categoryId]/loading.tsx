@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <>
       <SharedLinkBanner />
-      <div className="w-full pt-48 min-h-screen px-52 flex justify-start items-start gap-24 flex-wrap">
+      <div className="w-full lg:pt-48 pt-24 min-h-screen lg:px-52 flex lg:justify-start justify-center items-start lg:gap-24 gap-12 flex-wrap">
         <SummaryLoader />
         <SummaryLoader />
         <SummaryLoader />
